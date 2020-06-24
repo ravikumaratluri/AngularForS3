@@ -1,5 +1,6 @@
 pipeline{
   agent any
+  
   stages{
 
     stage ('checkout'){
@@ -9,6 +10,9 @@ pipeline{
     
     }
     stage ('Angular cli'){
+      agent {
+        docker { image 'node:10' }
+      }
       steps{
          sh 'npm install'
          sh 'npm install -g @angular/cli@8'
