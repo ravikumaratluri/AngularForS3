@@ -10,11 +10,11 @@ pipeline{
     }
     stage ('Angular cli'){
       steps{
+         bat 'npm install'
          echo Installing packages
-         npm install
-         npm install -g @angular/cli@8
+         bat 'npm install -g @angular/cli@8'
          echo Building Angular Project
-         ng build
+         bat 'ng build'
          echo Building Completed
       }
     }
