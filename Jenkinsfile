@@ -10,7 +10,7 @@ pipeline{
     }
     stage ('Angular cli'){
       steps{
-         sh 'sudo apt-get install npm'
+         sh 'apt-get install npm'
          sh 'npm install'
          sh 'npm install -g @angular/cli@8'
          sh 'ng build'
